@@ -21,7 +21,6 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 script {
-                    // "SonarScanner" doit être configuré dans Jenkins
                     withSonarQubeEnv('Sonarqube') {
                         sh "${tool 'SonarScanner'}\\bin\\sonar-scanner.bat -Dsonar.login=devops-token"
                     }
